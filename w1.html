@@ -55,10 +55,14 @@
         the related work to answer these questions).
         </p>
         <p>
+        Here is some <a href="https://www.cs.purdue.edu/homes/hosking/661-12/critique.pdf">additional advice</a>, 
+        by Kathryn S McKinley (thanks to Keith Chapman for the link).
+        </p>
+        <p>
         Summaries are due before midnight on Sunday, August 31 (submit per email to the instructor).
         </p>
 
-        <h2>Programming</h2>
+        <h2>Hacking</h2>
 
         <p>
         The programming assignments will be done in <a href="http://www.scala-lang.org">Scala</a>.
@@ -75,18 +79,109 @@
         There are also mailing lists, and Stack Overflow is pretty helpful, too.
         </p>
 
-        <h3>Higher-Order Functions in Scala</h3>
+        <h3>1. Higher-Order Functions in Scala</h3>
         <p>
-        The first assignment will review higher order functions in Scala (details will be filled in shortly).
+        The first assignment will review functional and object oriented programming in Scala (file Sets.scala).
         </p>
 
-        <h3>Interpreters in Scala</h3>
+        <h4>A. Sets as Higher-Order Functions</h4>
         <p>
-        The second assignment will implement some simple interpreters in Scala (details will be filled in shortly).
+        To get acquainted with higher order functions, we implement a Set datatype, representing
+        sets by their characteristic functions. In other words, a set of integers is a function that,
+        for a given integer, returns a boolean that indicates if the integer is in the set or not:
+        <br/><code>type Set = Int => Boolean</code><br/>
+        Given this representation, we define a function that tests if a certain value is contained
+        in a set in the following way:
+        <br/><code>def contains(s: Set, elem: Int): Boolean = s(elem)</code><br/>
+        </p>
+
+        <p>
+        Your first task is to complete the implementation by defining the following functions
+        that build sets:
+        <br/><code>def set(elem: Int): Set // create a single-element set</code>
+        <br/><code>def union(s: Set, t: Set): Set</code>
+        <br/><code>def intersect(s: Set, t: Set): Set</code>
+        <br/><code>def diff(s: Set, t: Set): Set // all elements from s that are not in t</code><br/>
+        </p>
+
+        <p>
+        Now define a function <code>filter</code> that selects only those elements of a set
+        that match a given predicate <code>p</code>. The filtered elements are returned as
+        a new set. You solution must be independent of the type of <code>Set</code> and
+        of <code>union,intersect,diff</code> defined above.
+        <br/><code>def filter(s: Set, p: Int => Boolean): Set</code>
+        </p>
+
+        <p>
+        Define a function <code>forall</code> that tests if a given predicate <code>p</code>
+        holds for all elements in a set:
+        <br/><code>def forall(s: Set, p: Int => Boolean): Boolean</code></br>
+        We note that it is not possible to access the elements of a set directly, so
+        we restrict ourselves to a range of possible integers from -1000 to 1000.
+        </p>
+
+        <p>
+        With the help of <code>forall</code>, implement a function <code>exists</code>
+        that tests if a set contains at least one element for which the predicate holds.
+        <br/><code>def exists(s: Set, p: Int => Boolean): Boolean</code></br>
+        </p>
+
+        <p>
+        Finally, implement a function <code>map</code> that transforms a given
+        set by applying a function <code>f</code> to each of its elements:
+        <br/><code>def map(s: Set, f: Int => Int): Set</code></br>
+        </p>
+
+        <p>
+        Implement suitable test cases for your functions. Ideally, write the tests
+        first.
+        </p>
+
+        <h4>A. Sets as Immutable Objects (Bonus)</h4>
+        <p>
+        An alternative representation for sets is based on objects and classes.
+        </p>
+
+        <p>
+        Implement function <code>intersect</code>. Hint: start by adding a
+        function <code>intersect0</code> that takes an accumulator as the second
+        argument:
+        <br/><code>  def intersect(that: IntSet): IntSet</code>
+        <br/><code>  def intersect0(that: IntSet, accu: IntSet): IntSet</code></br>
+        This accumulator will keep a partial result while computing the intersection.
+        </p>
+
+        <p>
+        Implement function <code>filter</code>. Hint: use the same accumulator
+        technique as above.
+        </p>
+
+        <p>
+        Now implement a new version of <code>intersect</code> in terms of <code>filter</code>.
         </p>
 
 
+        <h3>2. Interpreters in Scala</h3>
+        <p>
+        The second assignment will implement some simple interpreters in Scala (file Interpreters.scala)
+        </p>
 
+        <h4>A. Reynolds Interpreter I</h4>
+        <p>
+        The code template contains an interpreter similar to the first one presented in Reynolds' paper (Section 5).
+        But some functionality is missing. Find out what and implement the missing pieces.
+        </p>
+
+        <p>
+        Implement the factorial function as a test case for your interpreter:
+        <br/><code>  def fact(n:Int) = if (n == 0) 1 else n * fact(n-1)</code><br/>
+        (you will need to extend the interpreter slightly to support the minus operation).
+        </p>
+
+        <h4>B. Reynolds Interpreter II</h4>
+        <p>
+        Implement the defunctionalized Interpreter II from the paper (Section 6).
+        </p>
 
       </section>
     </div>
