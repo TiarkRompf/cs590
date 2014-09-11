@@ -47,7 +47,7 @@
             The next 700 Programming Languages</a>.<br/> Landin 1966</li>
 
             <li class="c4 c8"><a href="http://conal.net/papers/jfp-saig/compile-dsel.pdf">
-            Compiling Embedded Languages</a>.<br/> Ellliot et al. 2003</li>
+            Compiling Embedded Languages</a>.<br/> Elliot et al. 2003</li>
         </ul>
         <p>
         Your summary should identify the main insights and scientific contribution of the paper: what is the key idea?
@@ -64,8 +64,39 @@
 
         <h2>Hacking</h2>
 
-        <p>Check back shortly ...</p>
+        <p>
+        Clone the <a href="http://github.com/tiarkrompf/cs590">course repo</a> 
+        from GitHub.
+        Solutions are due before midnight on Thursday, September 18 (submit per email to the instructor).
+        </p>
 
+        <h3>An Image DSL that Compiles to JavaScript</h3>
+
+        <p>
+        This assignment will implement an embedded image DSL, similar to the one in Elliot's paper in Scala.
+        DSL programs will be compiled to JavaScript.
+        </p>
+
+        <h4>A. Drawing a Checker Board</h4>
+        <p>Familiarize yourself with the test case "allred" to understand how the compilation works.
+        Then fill in test "checkers" to draw a checkerboard. You may need to extend <code>trait Images</code>
+        along the lines of the paper.</p>
+
+        <h4>B. Transformations</h4>
+        <p>Implement <code>translate,scale,rotate</code> and draw images that use these transforms. Use
+        the <a href="http://conal.net/Pan/Gallery/default.htm">Pan image gallery</a> or the paper 
+        for inspiration.</p>
+
+        <h4>C. Static Types and Smart Constructors</h4>
+        
+        <p>Take <code>trait ImagesPoly</code> as a starting point to implement the typed representation
+        described in Section 5. Implement the algebraic optimizations using smart constructors
+        described in Section 6.</p>
+
+        <h4>D. Bonus: CSE</h4>
+        <p>Implement the common subexpression elimination optimization described in the paper.</p>
+
+ 
       </section>
     </div>
     <footer>
