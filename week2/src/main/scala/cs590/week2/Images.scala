@@ -14,6 +14,28 @@ trait Images {
 
 }
 
+trait ImagesPoly {
+
+  // see section 5 in Elliott's paper
+
+  type Image = Point => Color
+  type Point = (DoubleE, DoubleE)
+  type Color = (DoubleE, DoubleE, DoubleE)
+
+  
+  type DoubleE = Exp[Double]
+
+  abstract class Exp[T]
+
+  case class Const[T](d: T) extends Exp[T]
+  case class Sym[T](x: String) extends Exp[T]
+
+  implicit def unit[T](d: T) = Const(d)
+
+}
+
+
+
 trait Codegen extends Images {
 
   def writeFile(name: String, content: String) {
