@@ -4,13 +4,16 @@ trait Images {
 
   type Image = Point => Color
   type Point = (DoubleE, DoubleE)
-  type Color = (DoubleE, DoubleE, DoubleE)
+  type Color = (DoubleE, DoubleE, DoubleE, DoubleE)
 
-  abstract class DoubleE
+  abstract class DoubleE {
+    def *(that: DoubleE) = Times(this,that)
+  }
   case class Const(d: Double) extends DoubleE
   case class Sym(x: String) extends DoubleE
+  case class Times(a: DoubleE, b: DoubleE) extends DoubleE
 
-  implicit def unit(d: Double) = Const(d)
+  implicit def unit(d: Double): DoubleE = Const(d)
 
 }
 
@@ -29,8 +32,14 @@ trait ImagesPoly {
 
   case class Const[T](d: T) extends Exp[T]
   case class Sym[T](x: String) extends Exp[T]
+  case class Times(a: Exp[Double], b: Exp[Double]) extends Exp[Double]
 
   implicit def unit[T](d: T) = Const(d)
+
+  implicit class DoubleOps(a: DoubleE) {
+    def *(b: DoubleE) = Times(a,b)
+  }
+
 
 }
 
@@ -49,6 +58,7 @@ trait Codegen extends Images {
   def eval(e: DoubleE): String = e match {
     case Sym(x) => x
     case Const(d) => d.toString
+    case Times(a,b) => s"(${eval(a)} * ${eval(b)})"
   }
 
   def template(fileName: String, image: Image) = s"""
@@ -74,19 +84,24 @@ trait Codegen extends Images {
             for (var y = 0; y < imageData.height; y++) {
               var offset = (y * imageData.width + x) * 4;
 
+              var xs = x/w;
+              var ys = y/h;
+
               var r = 0;
               var g = 0;
               var b = 0;
+              var a = 0;
 
               ${
-                val (r,g,b) = image((Sym("x"),Sym("y")))
-                val (rs,gs,bs) = (eval(r), eval(g), eval(b))
-                s"r = $rs*255; g = $gs*255; b = $bs*255"
+                val (r,g,b,a) = image((Sym("xs"),Sym("ys")))
+                val (rs,gs,bs,as) = (eval(r), eval(g), eval(b), eval(a))
+                s"r = $rs*255; g = $gs*255; b = $bs*255; a = $as*255"
               }
 
               imageData.data[offset] = r;
               imageData.data[offset + 1] = g;
               imageData.data[offset + 2] = b;
+              imageData.data[offset + 3] = a;
             }
           }
           gCtx.putImageData(imageData, 0, 0);
