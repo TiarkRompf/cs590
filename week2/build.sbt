@@ -1,4 +1,4 @@
-name := "week1"
+name := "week2"
 
 organization := "cs590"
 
