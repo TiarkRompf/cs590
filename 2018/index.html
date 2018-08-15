@@ -1,184 +1,641 @@
 <!DOCTYPE HTML>
 <!--
-	Stellar by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+    Stellar by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Stellar by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+    <head>
+        <title>CS590 Deep Learning for Symbolic Reasoning</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    </head>
+    <body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+        <!-- Wrapper -->
+            <div id="wrapper">
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<span class="logo"><img src="images/logo.svg" alt="" /></span>
-						<h1>Stellar</h1>
-						<p>Just another free, fully responsive site template<br />
-						built by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a href="https://html5up.net">HTML5 UP</a>.</p>
-					</header>
+                <!-- Header -->
+                    <header id="header" class="alt">
+                        <!-- <span class="logo"><img src="images/logo.svg" alt="" /></span> -->
+                        <h1>CS590 Deep Learning for Symbolic Reasoning</h1>
+                        <p>Purdue University, Fall 2018, 3 credits. 
+                        Instructor: <a href="https://tiarkrompf.github.io">Tiark Rompf</a>, 
+                        TA: <a href="https://www.cs.purdue.edu//people/graduate-students/wang603/">Fei Wang</a>.
+                        <br/>
+                        11:30 am - 12:20 pm MWF LWSN B134
+                        </p>
+                        <!-- Class  11:30 am - 12:20 pm MWF LWSN B134 Aug 20 - Dec 8 -->
+                    </header>
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul>
-							<li><a href="#intro" class="active">Introduction</a></li>
-							<li><a href="#first">First Section</a></li>
-							<li><a href="#second">Second Section</a></li>
-							<li><a href="#cta">Get Started</a></li>
-						</ul>
-					</nav>
+                <!-- Nav -->
+                    <nav id="nav">
+                        <ul>
+                            <li><a href="#intro" class="active">About the Course</a></li>
+                            <li><a href="#overview">Organization</a></li>
+                            <li><a href="#goals">Learning Goals</a></li>
+                            <li><a href="#policies">Policies</a></li>
+                            <li><a href="#schedule">Schedule</a></li>
+                            <li><a href="#papers">Topics/Reading</a></li>
+                            <li><a href="#resources">Resources</a></li>
+                        </ul>
+                    </nav>
 
-				<!-- Main -->
-					<div id="main">
+                <!-- Main -->
+                    <div id="main">
 
-						<!-- Introduction -->
-							<section id="intro" class="main">
-								<div class="spotlight">
-									<div class="content">
-										<header class="major">
-											<h2>Ipsum sed adipiscing</h2>
-										</header>
-										<p>Sed lorem ipsum dolor sit amet nullam consequat feugiat consequat magna
-										adipiscing magna etiam amet veroeros. Lorem ipsum dolor tempus sit cursus.
-										Tempus nisl et nullam lorem ipsum dolor sit amet aliquam.</p>
-										<ul class="actions">
-											<li><a href="generic.html" class="button">Learn More</a></li>
-										</ul>
-									</div>
-									<span class="image"><img src="images/pic01.jpg" alt="" /></span>
-								</div>
-							</section>
+                        <!-- Introduction -->
+                            <section id="intro" class="main">
+                                <!-- <div class="spotlight"> -->
+                                    <!-- <div class="content"> -->
+                                        <header class="major special">
+                                            <h2>About the Course</h2>
+                                        </header>
+                                        <p>
+Despite the recent successes of deep neural networks in fields such as image recognition, machine translation, or gameplay, big challenges remain in applying deep learning techniques to applications that require symbolic reasoning: theorem proving, compiler optimization, software verification and synthesis, and solving NP-complete problems. This seminar aims to make progress in this exciting and timely field. 
 
-						<!-- First Section -->
-							<section id="first" class="main special">
-								<header class="major">
-									<h2>Magna veroeros</h2>
-								</header>
-								<ul class="features">
-									<li>
-										<span class="icon major style1 fa-code"></span>
-										<h3>Ipsum consequat</h3>
-										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
-									</li>
-									<li>
-										<span class="icon major style3 fa-copy"></span>
-										<h3>Amed sed feugiat</h3>
-										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
-									</li>
-									<li>
-										<span class="icon major style5 fa-diamond"></span>
-										<h3>Dolor nullam</h3>
-										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
-									</li>
-								</ul>
-								<footer class="major">
-									<ul class="actions special">
-										<li><a href="generic.html" class="button">Learn More</a></li>
-									</ul>
-								</footer>
-							</section>
+<!-- Students are expected to come with background knowledge on either deep learning or symbolic reasoning (programming languages / formal methods).  -->
+                                        </p>
+<p>
+The course will be <b>research oriented</b> and <b>hands-on</b>: we will read and discuss original papers from the forefront of AI research (many from 2018), and participants will propose and complete a course project.
+</p>
 
-						<!-- Second Section -->
-							<section id="second" class="main special">
-								<header class="major">
-									<h2>Ipsum consequat</h2>
-									<p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
-									posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
-								</header>
-								<ul class="statistics">
-									<li class="style1">
-										<span class="icon fa-code-fork"></span>
-										<strong>5,120</strong> Etiam
-									</li>
-									<li class="style2">
-										<span class="icon fa-folder-open-o"></span>
-										<strong>8,192</strong> Magna
-									</li>
-									<li class="style3">
-										<span class="icon fa-signal"></span>
-										<strong>2,048</strong> Tempus
-									</li>
-									<li class="style4">
-										<span class="icon fa-laptop"></span>
-										<strong>4,096</strong> Aliquam
-									</li>
-									<li class="style5">
-										<span class="icon fa-diamond"></span>
-										<strong>1,024</strong> Nullam
-									</li>
-								</ul>
-								<p class="content">Nam elementum nisl et mi a commodo porttitor. Morbi sit amet nisl eu arcu faucibus hendrerit vel a risus. Nam a orci mi, elementum ac arcu sit amet, fermentum pellentesque et purus. Integer maximus varius lorem, sed convallis diam accumsan sed. Etiam porttitor placerat sapien, sed eleifend a enim pulvinar faucibus semper quis ut arcu. Ut non nisl a mollis est efficitur vestibulum. Integer eget purus nec nulla mattis et accumsan ut magna libero. Morbi auctor iaculis porttitor. Sed ut magna ac risus et hendrerit scelerisque. Praesent eleifend lacus in lectus aliquam porta. Cras eu ornare dui curabitur lacinia.</p>
-								<footer class="major">
-									<ul class="actions special">
-										<li><a href="generic.html" class="button">Learn More</a></li>
-									</ul>
-								</footer>
-							</section>
 
-						<!-- Get Started -->
-							<section id="cta" class="main special">
-								<header class="major">
-									<h2>Congue imperdiet</h2>
-									<p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
-									posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
-								</header>
-								<footer class="major">
-									<ul class="actions special">
-										<li><a href="generic.html" class="button primary">Get Started</a></li>
-										<li><a href="generic.html" class="button">Learn More</a></li>
-									</ul>
-								</footer>
-							</section>
 
-					</div>
+<!--                                         <ul class="actions">
+                                            <li><a href="generic.html" class="button">Learn More</a></li>
+                                        </ul> -->
+                                        <!-- </div> -->
+<!--                                     <span class="image"><img src="images/pic01.jpg" alt="" /></span> -->
+                                 <!-- </div> -->
+                            </section>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<h2>Aliquam sed mauris</h2>
-							<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat egestas velit, vitae tincidunt odio.</p>
-							<ul class="actions">
-								<li><a href="generic.html" class="button">Learn More</a></li>
-							</ul>
-						</section>
-						<section>
-							<h2>Etiam feugiat</h2>
-							<dl class="alt">
-								<dt>Address</dt>
-								<dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
-								<dt>Phone</dt>
-								<dd>(000) 000-0000 x 0000</dd>
-								<dt>Email</dt>
-								<dd><a href="#">information@untitled.tld</a></dd>
-							</dl>
-							<ul class="icons">
-								<li><a href="#" class="icon fa-twitter alt"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon fa-facebook alt"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon fa-instagram alt"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon fa-github alt"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon fa-dribbble alt"><span class="label">Dribbble</span></a></li>
-							</ul>
-						</section>
-						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-					</footer>
+                            <section id="overview" class="main">
+                                <header class="major special">
+                                    <h2>Organization</h2>
+                                </header>
+                                <p>
+                                Like any good ML approach, the course is roughly split into two halves, 
+                                <i>training</i> and <i>inference</i>, and students will also get
+                                a chance to act as startup founders and venture capitalists:
+                                </p>
+                                <p>
+                                    The first half ("training") focuses on catching up with the state of the art: in 
+                                    every meeting, one student will present a paper, which will be discussed
+                                    by the class.
+                                    Two other students will serve as facilitators and guide the discussion.
+                                    By the end of each week, every student will submit a 4-sentence summary 
+                                    of each of the papers discussed during that week.
+                                </p>
+                                <p>
+                                    The second half ("inference") focuses on original research: by the end of week 5,
+                                    each student will submit a project proposal (1 page), which they will
+                                    pitch to the class, and perhaps adjusted based on feedback, implement 
+                                    during the rest of the term. 
+                                    Deliverables include progress updates, a final presentation, 
+                                    a working implementation and reproducible experiments, and a final 
+                                    report (4 pages).
+                                </p>
+                                <p>
+                                    To make matters interesting, projects will incude a peer-evaluation
+                                    component. Each student receives a fund of 30 M 
+                                    fictitious dollars, which they "invest" in other students' project
+                                    proposals. There are three investment rounds, series A, B, and C: 
+                                    at the time of the proposal, mid-project, and after the final hand-in. 
+                                    Each student's grade will depend to a small degree on (a) how well their
+                                    "portfolio" of other project investments did in the final IPO (where the
+                                    post-IPO "market value" is determined by the project grades assigned by
+                                    the instructor); and (b) how much funding (i.e., confidence) their 
+                                    own project attracts from other students. 
+                                </p>
+                            </section>
 
-			</div>
+                            <section id="goals" class="main">
+                                <header class="major special">
+                                    <h2>Learning Goals</h2>
+                                </header>
+                                <p>
+                                    The goal of the class is to kick off a set of research projects
+                                    on the boundary of deep learning and symbolic reasoning. For students
+                                    that do well in class, the expected outcome is to set the
+                                    student on a successful research trajectory in this area and
+                                    that the class project will be a foundation for a future conference 
+                                    submission.
+                                </p>
+                                <p>
+                                    Besides the technical material the course will be a great training
+                                    ground for presenting, writing, reviewing, and other important
+                                    research skills. 
+                                    For example, paper summaries can be a blueprint for future related work 
+                                    sections, and reviewing peer proposals and judging their chances for 
+                                    success are important skills for any academic.
+                                </p>
+                            </section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+                            <section id="policies" class="main">
+                                <header class="major special">
+                                    <h2>Policies</h2>
+                                </header>
+                                        <h3>Grading</h3>
+                                        <ul>
+                                            <li>60% Project</li> 
+                                            <li>30% paper presentations, summaries, and participation in class</li> 
+                                            <li>10% peer evaluation</li>
+                                        </ul>
+                                        <h3>Course Policies</h3>
+                                        <ul>
+                                            <li><a href="https://spaf.cerias.purdue.edu/cpolicy.html">General policies</a></li>
+                                            <li><a href="https://spaf.cerias.purdue.edu/integrity.html">Academic integrity</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </section>
 
-	</body>
+                            <section id="schedule" class="main">
+                                <header class="major special">
+                                    <h2>Schedule</h2>
+                                </header>
+                                <table>
+                                    <tr><th width="20%">Date</th><th>Topic</th><th width="20%">Notes</th></tr>
+                                    <!-- Week 1 -->
+                                    <tr><td>M 08/20 <b>(W1)</b></td>
+                                        <td>Introduction &amp; logistics</td>
+                                        <td></td></tr>
+                                    <tr><td>W 08/22</td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <tr><td>F 08/24</td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <!-- Week 2 -->
+                                    <tr><td>M 08/27 <b>(W2)</b></td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <tr><td>W 08/29</td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <tr><td>F 08/31</td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <!-- Week 3 -->
+                                    <tr><td>M 09/03 <b>(W3)</b></td>
+                                        <td>No class (Labour Day)</td>
+                                        <td></td></tr>
+                                    <tr><td>W 09/05</td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <tr><td>F 09/07</td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <!-- Week 4 -->
+                                    <tr><td>M 09/10 <b>(W4)</b></td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <tr><td>W 09/12</td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <tr><td>F 09/14</td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <!-- Week 5 -->
+                                    <tr><td>M 09/17 <b>(W5)</b></td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <tr><td>W 09/19</td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <tr><td>F 09/21</td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <!-- Week 6 -->
+                                    <tr><td>M 09/24 <b>(W6)</b></td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <tr><td>W 09/26</td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <tr><td>F 09/28</td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <!-- Week 7 -->
+                                    <tr><td>M 10/01 <b>(W7)</b></td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <tr><td>W 10/03</td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <tr><td>F 10/05</td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <!-- Week 8 -->
+                                    <tr><td>M 10/08 <b>(W8)</b></td>
+                                        <td>No class (October Break)</td>
+                                        <td></td></tr>
+                                    <tr><td>W 10/10</td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <tr><td>F 10/12</td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <!-- Week 9 -->
+                                    <tr><td>M 10/15 <b>(W9)</b></td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <tr><td>W 10/17</td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <tr><td>F 10/19</td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <!-- Week 10 -->
+                                    <tr><td>M 10/22 <b>(W10)</b></td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <tr><td>W 10/24</td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <tr><td>F 10/26</td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <!-- Week 11 -->
+                                    <tr><td>M 10/28 <b>(W11)</b></td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <tr><td>W 10/30</td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <tr><td>F 11/01</td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <!-- Week 12 -->
+                                    <tr><td>M 11/05 <b>(W12)</b></td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <tr><td>W 11/07</td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <tr><td>F 11/09</td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <!-- Week 13 -->
+                                    <tr><td>M 11/12 <b>(W13)</b></td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <tr><td>W 11/14</td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <tr><td>F 11/16</td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <!-- Week 14 -->
+                                    <tr><td>M 11/19 <b>(W14)</b></td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <tr><td>W 11/21</td>
+                                        <td>No class (Thanksgiving break)</td>
+                                        <td></td></tr>
+                                    <tr><td>F 11/23</td>
+                                        <td>No class</td>
+                                        <td></td></tr>
+                                    <!-- Week 15 -->
+                                    <tr><td>M 11/26 <b>(W15)</b></td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <tr><td>W 11/28</td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <tr><td>F 11/30</td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <!-- Week 16 -->
+                                    <tr><td>M 12/03 <b>(W16)</b></td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <tr><td>W 12/05</td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <tr><td>F 12/07</td>
+                                        <td></td>
+                                        <td></td></tr>
+                                    <!-- Week 17 -->
+                                    <tr><td>M 12/10 <b>(W17)</b></td>
+                                        <td>No class</td>
+                                        <td></td></tr>
+                                    <tr><td>W 12/12</td>
+                                        <td>No class</td>
+                                        <td></td></tr>
+                                    <tr><td>F 12/14</td>
+                                        <td>No class, final project reports due</td>
+                                        <td></td></tr>
+                                </table>
+                            </section>
+
+                            <section id="papers" class="main">
+                                <header class="major special">
+                                    <h2>Topics/Reading</h2>
+                                </header>
+                                <p>
+                                    This is a tentative and non-exhaustive list of papers that will be
+                                    presented and discussed in class:
+                                </p>
+                                <ul>
+<li><a href="https://jair.org/index.php/jair/article/view/11172">
+    Learning Explanatory Rules from Noisy Data
+</a><br/>
+Richard Evans, Edward Grefenstette. 
+JAIR 2018
+</li>
+
+<li><a href="https://arxiv.org/abs/1807.08204">
+Towards Neural Theorem Proving at Scale
+</a><br/>
+Pasquale Minervini, Matko Bosnjak, Tim Rocktäschel, Sebastian Riedel. 
+NAMPI 2018
+</li>
+
+<li><a href="">
+End-to-end differentiable proving
+</a><br/>
+Tim Rocktäschel, Sebastian Riedel. 2017 
+</li>
+
+<li><a href="https://uclmr.github.io/nampi/extended_abstracts/shin_2.pdf">
+Synthetic Datasets for Neural Program Synthesis
+</a></li>
+
+<li><a href="https://arxiv.org/abs/1805.04276">
+Leveraging Grammar and Reinforcement Learning for Neural Program Synthesis
+</a>, (<a href="https://github.com/carpedm20/program-synthesis-rl-tensorflow">blog</a>)
+</li>
+
+<li><a href="https://arxiv.org/abs/1807.00403">
+Towards Mixed Optimization for Reinforcement Learning with Program Synthesis
+</a></li>
+
+<li><a href="https://arxiv.org/abs/1710.04157">
+Neural Program Meta-Induction
+</a><br/>
+Jacob Devlin, Rudy Bunel, Rishabh Singh, Matthew Hausknecht, Pushmeet Kohli.
+NIPS 2017
+<br/><a href="https://deepmind.com/blog/learning-to-generate-images/">
+[blog]
+</a></li>
+
+<li><a href="https://arxiv.org/pdf/1806.01261.pdf">
+Relational inductive biases, deep learning, and graph networks
+</a></li>
+
+<li><a href="">
+Propositions as Proofs    
+</a><br/>
+Philip Wadler
+</li>
+
+<!-- 
+Neural Arithmetic Logic Units
+
+Andrew Trask, Felix Hill, Scott Reed, Jack Rae, Chris Dyer, Phil Blunsom
+
+    https://arxiv.org/abs/1808.00508
+-->    
+
+
+                                </ul>
+                                </table>
+                            </section>
+
+                            <section id="resources" class="main">
+                                <header class="major special">
+                                    <h2>Resources</h2>
+                                </header>
+
+<h3>Reviews, Papers, and Talks</h3>
+<ul>
+    <li><a href="http://cs.au.dk/~danvy/communication.html">Communication in Computer Science</a><br/>
+    Olivier Danvy, class at Yale-NUS College Singapore
+</ul>
+
+<h3>Presenting</h3>
+<ul>
+    <li><a href="https://www.inf.ethz.ch/personal/markusp/teaching/guides/guide-presentations-new.pdf">
+        How To Give Strong Technical Presentations
+    </a> (<a href="https://www.inf.ethz.ch/personal/markusp/teaching/guides/guide-presentations.pdf">older version with notes</a>)<br/>
+    Markus P&uuml;schel
+    </li>
+    <li><a href="https://www.microsoft.com/en-us/research/academic-program/give-great-research-talk/">
+    How to Give a Great Research Talk
+    </a><br/>
+    Simon Peyton Jones
+    </li>
+</ul>
+<h3>Writing</h3>
+<ul>
+    <li><a href="https://people.mpi-sws.org/~dreyer/talks/talk-plmw16.pdf">
+    How to Write Papers So People Can Read Them
+    </a><br/>
+    Derek Dreyer
+    </li>
+    <li><a href="https://www.microsoft.com/en-us/research/academic-program/write-great-research-paper/">
+    How to Write a Great Research Paper
+    </a> (<a href="https://www.youtube.com/watch?v=ZmFXMREURBI">video</a>)<br/>
+    Simon Peyton Jones
+    </li>
+</ul>
+<h3>Proposals</h3>
+<ul>
+    <li><a href="https://www.microsoft.com/en-us/research/academic-program/how-to-write-a-great-research-proposal/">
+    How to Write a Great Research Proposal
+    </a><br/>
+    Simon Peyton Jones and Alan Bundy
+    </li>
+
+    <li><a href="https://www.darpa.mil/work-with-us/heilmeier-catechism">
+    The Heilmeier Catechism
+    </a><br/>
+    George H. Heilmeier
+    </li>
+</ul>
+<h3>Experiments</h3>
+<ul>
+    <li><a href="http://www.sigplan.org/Resources/EmpiricalEvaluation/">
+    SIGPLAN empirical evaluation checklist
+    </a><br/>
+    Steve Blackburn, Matthias Hauswirth, Emery Berger, Michael Hicks
+    </li>
+</ul>
+<h3>Deep Learning (General)</h3>
+<ul>
+    <li><a href="https://github.com/astorfi/Deep-Learning-World">
+    Deep Learning World
+    </a><br/>
+    Collected resources
+    </li>
+    <li><a href="http://www.cs.cmu.edu/~rsalakhu/jsm2018.html">
+    The Deep Learning Revolution
+    </a><br/>
+    Christopher Manning, Russ Salakhutdinov
+    </li>
+    <li><a href="https://www.youtube.com/watch?v=9EN_HoEk3KY">
+    OpenAI Meta-Learning and Self-Play
+    </a><br/>
+    Ilya Sutskever
+    </li>
+    <li><a href="http://course.fast.ai">
+    Deep Learning for Coders
+    </a><br/>
+    Course at fast.ai
+    </li>
+    <li><a href="https://www.deeplearning.ai">
+    Deep Learning for Coders
+    </a><br/>
+    Andrew Ng, specialization on Coursera
+    </li>
+</ul>
+<h3>ML &amp; Symbolic Reasoning</h3>
+<ul>
+    <li><a href="http://cl-informatik.uibk.ac.at/teaching/ss18/mltp/content.php">
+    Machine Learning for Theorem Proving
+    </a><br/>
+    Class at University of Innsbruck
+    </li>
+    <li><a href="https://uclmr.github.io/nampi/">
+    Neural Abstract Machines & Program Induction
+    </a>, (<a href="https://uclmr.github.io/nampi/2016/index.html">v1 2016</a>)<br/>
+    Workshop at ICML/NIPS
+    </li>
+    <li><a href="https://alexpolozov.com/blog/program-synthesis-2018/">
+    Program Synthesis in 2017-18
+    </a><br/>
+    Alex Polozov
+    </li>
+</ul>
+                            </section>
+
+                        <!-- First Section -->
+                            <!-- <section id="first" class="main">
+                                <header class="major special">
+                                    <h2>Fineprint</h2>
+                                </header>
+                                <ul class="features">
+                                    <li>
+                                        <span class="icon major style1 fa-code"></span>
+                                        <h3>Ipsum consequat</h3>
+                                        <p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
+                                    </li>
+                                    <li>
+                                        <span class="icon major style3 fa-copy"></span>
+                                        <h3>Amed sed feugiat</h3>
+                                        <p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
+                                    </li>
+                                    <li>
+                                        <span class="icon major style5 fa-diamond"></span>
+                                        <h3>Dolor nullam</h3>
+                                        <p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
+                                    </li>
+                                </ul>
+                                <footer class="major">
+                                    <ul class="actions special">
+                                        <li><a href="generic.html" class="button">Learn More</a></li>
+                                    </ul>
+                                </footer>
+                            </section> -->
+
+                        <!-- Second Section -->
+                            <!-- <section id="second" class="main special">
+                                <header class="major">
+                                    <h2>Ipsum consequat</h2>
+                                    <p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
+                                    posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
+                                </header>
+                                <ul class="statistics">
+                                    <li class="style1">
+                                        <span class="icon fa-code-fork"></span>
+                                        <strong>5,120</strong> Etiam
+                                    </li>
+                                    <li class="style2">
+                                        <span class="icon fa-folder-open-o"></span>
+                                        <strong>8,192</strong> Magna
+                                    </li>
+                                    <li class="style3">
+                                        <span class="icon fa-signal"></span>
+                                        <strong>2,048</strong> Tempus
+                                    </li>
+                                    <li class="style4">
+                                        <span class="icon fa-laptop"></span>
+                                        <strong>4,096</strong> Aliquam
+                                    </li>
+                                    <li class="style5">
+                                        <span class="icon fa-diamond"></span>
+                                        <strong>1,024</strong> Nullam
+                                    </li>
+                                </ul>
+                                <p class="content">Nam elementum nisl et mi a commodo porttitor. Morbi sit amet nisl eu arcu faucibus hendrerit vel a risus. Nam a orci mi, elementum ac arcu sit amet, fermentum pellentesque et purus. Integer maximus varius lorem, sed convallis diam accumsan sed. Etiam porttitor placerat sapien, sed eleifend a enim pulvinar faucibus semper quis ut arcu. Ut non nisl a mollis est efficitur vestibulum. Integer eget purus nec nulla mattis et accumsan ut magna libero. Morbi auctor iaculis porttitor. Sed ut magna ac risus et hendrerit scelerisque. Praesent eleifend lacus in lectus aliquam porta. Cras eu ornare dui curabitur lacinia.</p>
+                                <footer class="major">
+                                    <ul class="actions special">
+                                        <li><a href="generic.html" class="button">Learn More</a></li>
+                                    </ul>
+                                </footer>
+                            </section>
+ -->
+                        <!-- Get Started -->
+<!--                             <section id="cta" class="main special">
+                                <header class="major">
+                                    <h2>Congue imperdiet</h2>
+                                    <p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
+                                    posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
+                                </header>
+                                <footer class="major">
+                                    <ul class="actions special">
+                                        <li><a href="generic.html" class="button primary">Get Started</a></li>
+                                        <li><a href="generic.html" class="button">Learn More</a></li>
+                                    </ul>
+                                </footer>
+                            </section>
+ -->
+                    </div>
+
+                <!-- Footer -->
+                    <footer id="footer">
+<!--                         <section>
+                            <h2>Aliquam sed mauris</h2>
+                            <p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat egestas velit, vitae tincidunt odio.</p>
+                            <ul class="actions">
+                                <li><a href="generic.html" class="button">Learn More</a></li>
+                            </ul>
+                        </section>
+                        <section>
+                            <h2>Etiam feugiat</h2>
+                            <dl class="alt">
+                                <dt>Address</dt>
+                                <dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
+                                <dt>Phone</dt>
+                                <dd>(000) 000-0000 x 0000</dd>
+                                <dt>Email</dt>
+                                <dd><a href="#">information@untitled.tld</a></dd>
+                            </dl>
+                            <ul class="icons">
+                                <li><a href="#" class="icon fa-twitter alt"><span class="label">Twitter</span></a></li>
+                                <li><a href="#" class="icon fa-facebook alt"><span class="label">Facebook</span></a></li>
+                                <li><a href="#" class="icon fa-instagram alt"><span class="label">Instagram</span></a></li>
+                                <li><a href="#" class="icon fa-github alt"><span class="label">GitHub</span></a></li>
+                                <li><a href="#" class="icon fa-dribbble alt"><span class="label">Dribbble</span></a></li>
+                            </ul>
+                        </section> -->
+                        <p class="copyright">&copy; Tiark Rompf, Purdue University. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+                    </footer>
+
+            </div>
+
+        <!-- Scripts -->
+            <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/js/jquery.scrollex.min.js"></script>
+            <script src="assets/js/jquery.scrolly.min.js"></script>
+            <script src="assets/js/browser.min.js"></script>
+            <script src="assets/js/breakpoints.min.js"></script>
+            <script src="assets/js/util.js"></script>
+            <script src="assets/js/main.js"></script>
+
+    </body>
 </html>
