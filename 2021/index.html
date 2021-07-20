@@ -1,0 +1,858 @@
+<!DOCTYPE HTML>
+<!--
+    Stellar by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <head>
+        <title>CS590 Advanced Topics in Compilers</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39122235-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-39122235-1');
+        </script>
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    </head>
+    <body class="is-preload">
+
+        <!-- Wrapper -->
+            <div id="wrapper">
+
+                <!-- Header -->
+                    <header id="header" class="alt">
+                        <!-- <span class="logo"><img src="images/logo.svg" alt="" /></span> -->
+                        <h1>CS590 Advanced Topics in Compilers</h1>
+                        <p>Purdue University, Fall 2021, 3 credits.
+                        Instructor: <a href="https://tiarkrompf.github.io">Tiark Rompf</a>
+                        <!-- TA: <a href="https://www.cs.purdue.edu//people/graduate-students/wang603/">Fei Wang</a>. -->
+                        <br/>
+                        4:30 pm - 5:45 pm TR |
+                        <a href="https://piazza.com/purdue/fall2021/cs590/home">Piazza</a>
+                        </p>
+                        <!-- Class  11:30 am - 12:20 pm MWF LWSN B134 Aug 20 - Dec 8 -->
+                    </header>
+
+                <!-- Nav -->
+                    <nav id="nav">
+                        <ul>
+                            <li><a href="#intro" class="active">About the Course</a></li>
+                            <li><a href="#overview">Organization</a></li>
+                            <li><a href="#goals">Learning Goals</a></li>
+                            <li><a href="#policies">Policies</a></li>
+                            <li><a href="#schedule">Schedule</a></li>
+                            <li><a href="#papers">Topics/Reading</a></li>
+                            <li><a href="#resources">Resources</a></li>
+                        </ul>
+                    </nav>
+
+                <!-- Main -->
+                    <div id="main">
+
+                        <!-- Introduction -->
+                            <section id="intro" class="main">
+                                <!-- <div class="spotlight"> -->
+                                    <!-- <div class="content"> -->
+                                        <header class="major special">
+                                            <h2>About the Course</h2>
+                                        </header>
+<p>
+This course will cover advanced topics in compiler construction. The range of topics is open-ended and will largely be driven by student interest, but we expect to cover topics such as the following: intermediate representations (e.g., graph IRs), type systems and advanced static checking, advanced program analysis and transformation (e.g., tree fusion, supercompilation), program optimization, advanced control abstractions (e.g., continuations, coroutines, algebraic effects), compilation for non-standard and emerging architectures (e.g., GPU, TPU, FPGA, CGRA), compilation for data processing and ML systems, applying ML techniques to compiler problems.
+</p>
+<p>
+The course will be <b>research oriented</b> and <b>hands-on</b>: we will read and discuss original papers from the forefront of research, and participants will propose and complete a course project.
+</p>
+
+
+
+<!--                                         <ul class="actions">
+                                            <li><a href="generic.html" class="button">Learn More</a></li>
+                                        </ul> -->
+                                        <!-- </div> -->
+<!--                                     <span class="image"><img src="images/pic01.jpg" alt="" /></span> -->
+                                 <!-- </div> -->
+                            </section>
+
+                            <section id="overview" class="main">
+                                <header class="major special">
+                                    <h2>Organization</h2>
+                                </header>
+                                <p>
+                                    Throughout the semester, students will present papers that represent the state
+                                    of the art in research. For each presented paper, two other students will serve
+                                    as facilitators to guide the discussion in class. Every student will submit a
+                                    4-sentence summary of each presented paper. We plan to invite the original authors
+                                    of selected papers to participate in the discussion.
+                                </p>
+                                <p>
+                                    In addition, each student will propose and implement a project. Project topics
+                                    are first discussed informally with the instructor, and then formalized in a
+                                    1-page proposal due by week 3. Project deliverables include definition of weekly
+                                    SMART tasks ahead of each week and continuous progress updates, as well as a final
+                                    presentation, a working implementation and reproducible experiments, and a
+                                    final report (4 pages, excluding bibliography), all accessible in a git repo.
+                                </p>
+                            </section>
+
+                            <section id="goals" class="main">
+                                <header class="major special">
+                                    <h2>Learning Goals</h2>
+                                </header>
+                                <p>
+                                    The goal of the class is to kick off a set of research projects
+                                    at the forefront of compiler research. For students
+                                    that do well in class, the expected outcome is to set the
+                                    student on a successful research trajectory in this area. Ideally,
+                                    the class project will lay the foundation for a future conference
+                                    submission.
+                                </p>
+                                <p>
+                                    Besides the technical material the course will be a great training
+                                    ground for presenting, writing, reviewing, task management, risk management,
+                                    and other important research skills.
+                                </p>
+                            </section>
+
+                            <section id="policies" class="main">
+                                <header class="major special">
+                                    <h2>Policies</h2>
+                                </header>
+                                        <h3>Grading</h3>
+                                        <ul>
+                                            <li>70% project</li>
+                                            <li>30% paper presentations, summaries, and participation in class</li>
+                                            <li>In each of the two categories, 50% are required for a passing grade</li>
+                                        </ul>
+                                        <h3>Course Policies</h3>
+                                        <ul>
+                                            <li><a href="https://spaf.cerias.purdue.edu/cpolicy.html">General policies</a></li>
+                                            <li><a href="https://spaf.cerias.purdue.edu/integrity.html">Academic integrity</a></li>
+                                        </ul>
+                                        <h3>Prerequisites</h3>
+                                        <ul>
+                                            <li>No formal prerequisites, but undergrad-level exposure to PL/compilers will be helpful</li>
+                                        </ul>
+                                        <h3>Attendance/communication</h3>
+                                        <ul>
+                                            <li>Attendance is required. Students may skip class 3 times for any reason.</li>
+                                            <li>Meetings will be in-person or via Zoom, according to instructor/departmental/university policies</li>
+                                            <li>Other communication is via Piazza</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section id="schedule" class="main">
+                                <header class="major special">
+                                    <h2>Schedule</h2>
+                                </header>
+                                <table>
+                                    <tr><th width="20%">Date</th><th>Topic</th><th width="20%">Notes</th></tr>
+                                    <!-- Week 1 -->
+                                    <tr><td>TU 08/24 <b>(W1)</b></td>
+                                        <td>Introduction &amp; logistics</td>
+                                        <td></td></tr>
+                                    <tr><td>TH 08/26</td>
+                                        <td>...</td>
+                                        <td></td></tr>
+                                    <!-- Week 2 -->
+                                </table>
+                            </section>
+
+                            <section id="papers" class="main">
+                                <header class="major special">
+                                    <h2>Topics/Reading</h2>
+                                </header>
+                                <p>
+                                    Below is a tentative and non-exhaustive list of papers that will be
+                                    presented and discussed in class. More will be sourced from recent
+                                    conferences such as PLDI, POPL, OOPSLA, ICFP, etc.
+                                </p>
+
+<ul>
+<li>  Reticle: A Virtual Machine for Programming Modern FPGAs
+<li>  Dependent Type Systems as Macros
+<li>  egg: Fast and Extensible Equality SaturationDistinguished Paper
+<li>  Compiler and Runtime Support for Continuation Marks
+<li>  From Folklore to Fact: Comparing Implementations of Stacks and Continuations
+<li>  LLHD: A Multi-level Intermediate Representation for Hardware Description Languages
+
+<li> Perceus: Garbage Free Reference Counting with Reuse
+<li>  AKG: Automatic Kernel Generation for Neural Processing Units using Polyhedral Transformations
+<li>  An Efficient Interpreter for Datalog by De-specializing Relations
+
+<li>  Automated Conformance Testing for JavaScript Engines via Deep Compiler Fuzzing
+<li>  Bliss: Auto-tuning Complex Applications using a Pool of Diverse Lightweight Learning Models
+<li>  Chianina: An Evolving Graph System for Flow- and Context-Sensitive Analyses of Million Lines of C Code
+
+<li>  DNNFusion: Accelerating Deep Neural Networks Execution with Advanced Operator Fusion
+
+
+<li>  Learning Nonlinear Loop Invariants with Gated Continuous Logic Networks
+<li>  The Essence of Bluespec: A Core Language for Rule-Based Hardware Design
+<li>  Synthesizing Structured CAD Models with Equality Saturation and Inverse Transformations
+<li>  A Sparse Iteration Space Transformation Framework for Sparse Tensor Algebra
+<li>  Handling Bidirectional Control Flow
+<li>  Getting to the Point: Index Sets and Parallelism-Preserving Autodiff for Pointful Array Programming
+<li>  Achieving High-Performance the Functional Way - A Functional Pearl on Expressing High-Performance Optimizations as Rewrite Strategies
+
+</ul>
+
+<!--
+                                <ul>
+
+<li><a href="https://arxiv.org/pdf/1809.02840.pdf">
+Neural Guided Constraint Logic Programming for Program Synthesis
+</a><br/>
+Lisa Zhang, Gregory Rosenblatt, Ethan Fetaya, Renjie Liao, William E. Byrd, Matthew Might, Raquel Urtasun, Richard Zemel.
+NIPS 2018
+</li>
+
+
+<li><a href="https://nips.cc/Conferences/2018/Schedule?showEvent=11976">
+Learning to solve SMT formulas
+</a><br/>
+Mislav Balunovic, Pavol Bielik, Martin Vechev.
+NIPS 2018
+</li>
+
+
+<li><a href="https://arxiv.org/abs/1809.02721">
+Learning to Solve NP-Complete Problems - A Graph Neural Network for the Decision TSP
+</a><br/>
+Marcelo O. R. Prates, Pedro H. C. Avelar, Henrique Lemos, Luis Lamb, Moshe Vardi,
+2018
+</li>
+
+
+
+
+<li><a href="https://arxiv.org/abs/1808.00508">
+Neural Arithmetic Logic Units
+</a><br/>
+Andrew Trask, Felix Hill, Scott Reed, Jack Rae, Chris Dyer, Phil Blunsom. 2018
+</li>
+
+<li><a href="https://jair.org/index.php/jair/article/view/11172">
+    Learning Explanatory Rules from Noisy Data
+</a><br/>
+Richard Evans, Edward Grefenstette.
+JAIR 2018
+</li>
+
+<li><a href="https://arxiv.org/abs/1807.08204">
+Towards Neural Theorem Proving at Scale
+</a><br/>
+Pasquale Minervini, Matko Bosnjak, Tim Rocktäschel, Sebastian Riedel.
+NAMPI 2018
+</li>
+
+<li><a href="https://uclmr.github.io/nampi/extended_abstracts/shin_2.pdf">
+Synthetic Datasets for Neural Program Synthesis
+</a><br/>
+Richard Shin, Neel Kant, Kavi Gupta, Christopher Bender, Brandon Trabucco, Rishabh Singh, Dawn Song.
+NAMPI 2018
+</li>
+
+<li><a href="https://arxiv.org/abs/1805.04276">
+Leveraging Grammar and Reinforcement Learning for Neural Program Synthesis
+</a>, (<a href="https://github.com/carpedm20/program-synthesis-rl-tensorflow">blog</a>)
+<br/>
+Rudy Bunel, Matthew Hausknecht, Jacob Devlin, Rishabh Singh, Pushmeet Kohli
+ICLR 2018
+</li>
+
+<li><a href="https://arxiv.org/abs/1807.00403">
+Towards Mixed Optimization for Reinforcement Learning with Program Synthesis
+</a><br/>
+Surya Bhupatiraju, Kumar Krishna Agrawal, Rishabh Singh
+ICML 2018
+</li>
+
+<li><a href="https://arxiv.org/abs/1804.02477">
+Programmatically Interpretable Reinforcement Learning
+</a><br/>
+Abhinav Verma, Vijayaraghavan Murali, Rishabh Singh, Pushmeet Kohli, Swarat Chaudhuri.
+ICML 2018
+</li>
+
+<li><a href="https://arxiv.org/abs/1806.00608">
+GamePad: A Learning Environment for Theorem Proving
+</a><br/>
+Daniel Huang, Prafulla Dhariwal, Dawn Song, Ilya Sutskever.
+2018
+</li>
+
+<li><a href="https://blog.openai.com/openai-five/">
+OpenAI Five
+</a><br/>
+OpenAI 2018
+</li>
+
+<li><a href="https://arxiv.org/abs/1805.09801">
+Meta-Gradient Reinforcement Learning
+</a><br/>
+Zhongwen Xu, Hado van Hasselt, David Silver.
+2018
+</li>
+
+<li><a href="https://arxiv.org/abs/1802.04697">
+Learning to search with MCTSnets
+</a><br/>
+Arthur Guez, Théophane Weber, Ioannis Antonoglou, Karen Simonyan, Oriol Vinyals, Daan Wierstra, Rémi Munos, David Silver.
+2018
+</li>
+
+<li><a href="https://openreview.net/pdf?id=S1q_Cz-Cb">
+Training Neural Machines with Partial Traces
+</a><br/>
+Matthew Mirman, Dimitar Dimitrov, Pavle Djordjevich, Timon Gehr, Martin Vechev.
+2018
+</li>
+
+<li><a href="https://arxiv.org/abs/1703.05698">
+Neural Sketch Learning for Conditional Program Generation
+</a><br/>
+Vijayaraghavan Murali, Letao Qi, Swarat Chaudhuri, Chris Jermaine.
+2018
+</li>
+
+
+<li><a href="https://arxiv.org/abs/1803.07244">
+The Three Pillars of Machine Programming
+</a><br/>
+Justin Gottschlich, Armando Solar-Lezama, Nesime Tatbul, Michael Carbin, Martin Rinard, Regina Barzilay, Saman Amarasinghe, Joshua B Tenenbaum, Tim Mattson.
+2018
+</li>
+
+
+
+
+
+<li><a href="https://arxiv.org/abs/1807.08058">
+Learning Heuristics for Automated Reasoning through Deep Reinforcement Learning
+</a><br/>
+Gil Lederman, Markus N. Rabe, Sanjit A. Seshia.
+2018
+</li>
+
+<li><a href="https://arxiv.org/abs/1802.05340">
+From Gameplay to Symbolic Reasoning: Learning SAT Solver Heuristics in the Style of Alpha(Go) Zero
+</a><br/>
+Fei Wang, Tiark Rompf.
+2018
+</li>
+
+
+<li><a href="https://arxiv.org/abs/1802.03685">
+Learning a SAT Solver from Single-Bit Supervision
+</a><br/>
+Daniel Selsam, Matthew Lamm, Benedikt Bunz, Percy Liang, Leonardo de Moura, David L. Dill.
+2018
+</li>
+
+<li><a href="http://elina.ethz.ch/papers/CAV18-RLPOLY_Paper.pdf">
+Fast Numerical Program Analysis with Reinforcement Learning
+</a><br/>
+CAV 2018
+</li>
+
+
+<li><a href="https://arxiv.org/abs/1807.02322">
+Memory Augmented Policy Optimization for Program Synthesis with Generalization
+</a><br/>
+Chen Liang, Mohammad Norouzi, Jonathan Berant, Quoc Le, Ni Lao.
+2018
+</li>
+
+<li><a href="https://arxiv.org/abs/1805.07563">
+Reinforcement Learning of Theorem Proving
+</a><br/>
+Cezary Kaliszyk, Josef Urban, Henryk Michalewski, Mirek Olšák.
+2018
+</li>
+
+
+<li><a href="https://arxiv.org/abs/1806.05695">
+Evolving simple programs for playing Atari games
+</a><br/>
+Dennis G Wilson, Sylvain Cussat-Blanc, Hervé Luga, Julian F Miller. 2018
+</li>
+
+
+<li><a href="https://arxiv.org/abs/1804.01118">
+Synthesizing Programs for Images using Reinforced Adversarial Learning
+</a><br/>
+Yaroslav Ganin, Tejas Kulkarni, Igor Babuschkin, SM Eslami, Oriol Vinyals.
+2018
+</li>
+
+
+<li><a href="https://arxiv.org/abs/1802.03691">
+Tree-to-tree Neural Networks for Program Translation
+</a><br/>
+Xinyun Chen, Chang Liu, Dawn Song.
+2018
+</li>
+
+<li><a href="https://arxiv.org/abs/1807.01281">
+Human-level performance in first-person multiplayer games with population-based deep reinforcement learning
+</a><br/>
+Max Jaderberg, Wojciech M Czarnecki, Iain Dunning, Luke Marris, Guy Lever, Antonio Garcia Castaneda, Charles Beattie, Neil C Rabinowitz, Ari S Morcos, Avraham Ruderman, Nicolas Sonnerat, Tim Green, Louise Deason, Joel Z Leibo, David Silver, Demis Hassabis, Koray Kavukcuoglu, Thore Graepel.
+2018
+</li>
+
+<li><a href="https://arxiv.org/abs/1803.10760">
+Unsupervised Predictive Memory in a Goal-Directed Agent
+</a><br/>
+Greg Wayne, Chia-Chun Hung, David Amos, Mehdi Mirza, Arun Ahuja, Agnieszka Grabska-Barwinska, Jack Rae, Piotr Mirowski, Joel Z Leibo, Adam Santoro, Mevlana Gemici, Malcolm Reynolds, Tim Harley, Josh Abramson, Shakir Mohamed, Danilo Rezende, David Saxton, Adam Cain, Chloe Hillier, David Silver, Koray Kavukcuoglu, Matt Botvinick, Demis Hassabis, Timothy Lillicrap.
+2018
+</li>
+
+
+<li><a href="https://arxiv.org/abs/1806.01830">
+Relational Deep Reinforcement Learning
+</a><br/>
+Vinicius Zambaldi, David Raposo, Adam Santoro, Victor Bapst, Yujia Li, Igor Babuschkin, Karl Tuyls, David Reichert, Timothy Lillicrap, Edward Lockhart, Murray Shanahan, Victoria Langston, Razvan Pascanu, Matthew Botvinick, Oriol Vinyals, Peter Battaglia.
+2018
+</li>
+
+
+
+<li><a href="https://arxiv.org/pdf/1806.01261.pdf">
+Relational inductive biases, deep learning, and graph networks
+</a><br/>
+Peter W. Battaglia, Jessica B. Hamrick, Victor Bapst, Alvaro Sanchez-Gonzalez, Vinicius Zambaldi, Mateusz Malinowski, Andrea Tacchetti, David Raposo, Adam Santoro, Ryan Faulkner, Caglar Gulcehre, Francis Song, Andrew Ballard, Justin Gilmer, George Dahl, Ashish Vaswani, Kelsey Allen, Charles Nash, Victoria Langston, Chris Dyer, Nicolas Heess, Daan Wierstra, Pushmeet Kohli, Matt Botvinick, Oriol Vinyals, Yujia Li, Razvan Pascanu.
+2018
+</li>
+
+<li><a href="https://arxiv.org/abs/1706.04972">
+Device Placement Optimization with Reinforcement Learning
+</a><br/>
+Azalia Mirhoseini, Hieu Pham, Quoc V. Le, Benoit Steiner, Rasmus Larsen, Yuefeng Zhou, Naveen Kumar, Mohammad Norouzi, Samy Bengio, Jeff Dean. 2017
+</li>
+
+
+<li><a href="https://arxiv.org/abs/1710.04157">
+Neural Program Meta-Induction
+</a>, (<a href="https://github.com/carpedm20/karel">
+blog</a>)<br/>
+Jacob Devlin, Rudy Bunel, Rishabh Singh, Matthew Hausknecht, Pushmeet Kohli.
+NIPS 2017
+</li>
+
+<li><a href="https://arxiv.org/abs/1705.11040">
+End-to-end differentiable proving
+</a><br/>
+Tim Rocktäschel, Sebastian Riedel.
+NIPS 2017
+</li>
+
+<li><a href="https://arxiv.org/pdf/1705.07962.pdf">
+pix2code: Generating Code from a Graphical User Interface Screenshot
+</a><br/>
+Tony Beltramelli. 2017
+</li>
+
+<li><a href="https://arxiv.org/pdf/1704.01696.pdf">
+A Syntactic Neural Model for General-Purpose Code Generation
+</a><br/>
+Pengcheng Yin, Graham Neubig. 2017
+</li>
+
+<li><a href="https://arxiv.org/abs/1706.01427">
+A simple neural network module for relational reasoning
+</a><br/>
+Adam Santoro, David Raposo, David G.T. Barrett, Mateusz Malinowski, Razvan Pascanu, Peter Battaglia, Timothy Lillicrap. 2017
+</li>
+
+
+
+<li><a href="https://arxiv.org/abs/1707.09627">
+Learning to Infer Graphics Programs from Hand-Drawn Images
+</a><br/>
+Kevin Ellis, Daniel Ritchie, Armando Solar-Lezama, Joshua B. Tenenbaum.
+2017
+</li>
+
+
+
+<li><a href="https://arxiv.org/abs/1701.06972">
+Deep Network Guided Proof Search
+</a><br/>
+Sarah Loos, Geoffrey Irving, Christian Szegedy, Cezary Kaliszyk.
+2017
+</li>
+
+
+<li><a href="https://www.nature.com/articles/nature24270">
+Mastering the game of Go without human knowledge
+</a>, (<a href="https://deepmind.com/blog/alphago-zero-learning-scratch/">blog</a>,
+<a href="https://medium.com/applied-data-science/alphago-zero-explained-in-one-diagram-365f5abf67e0">cheat sheet</a>, <a href="https://medium.com/applied-data-science/how-to-build-your-own-alphazero-ai-using-python-and-keras-7f664945c188">build your own</a>)
+<br/>
+David Silver, Julian Schrittwieser, Karen Simonyan, Ioannis Antonoglou, Aja Huang, Arthur Guez, Thomas Hubert, Lucas Baker, Matthew Lai, Adrian Bolton, Yutian Chen, Timothy Lillicrap, Fan Hui, Laurent Sifre, George van den Driessche, Thore Graepel, Demis Hassabis.
+Nature 2017
+</li>
+
+<li><a href="https://storage.googleapis.com/deepmind-media/alphago/AlphaGoNaturePaper.pdf">
+Mastering the game of Go with deep neural networks and tree search
+</a><br/>
+David Silver, Julian Schrittwieser, Karen Simonyan, Ioannis Antonoglou, Aja Huang, Arthur Guez, Thomas Hubert, Lucas Baker, Matthew Lai, Adrian Bolton, Yutian Chen, Timothy Lillicrap, Fan Hui, Laurent Sifre, George van den Driessche, Thore Graepel, Demis Hassabis.
+Nature 2016
+</li>
+
+<li><a href="https://arxiv.org/pdf/1609.05518.pdf">
+Towards Deep Symbolic Reinforcement Learning
+</a><br/>
+Marta Garnelo, Kai Arulkumaran, Murray Shanahan. 2016
+</li>
+
+<li><a href="https://arxiv.org/abs/1611.09940">
+Neural Combinatorial Optimization with Reinforcement Learning
+</a><br/>
+Irwan Bello, Hieu Pham, Quoc V. Le, Mohammad Norouzi, Samy Bengio. 2016
+</li>
+
+<li><a href="https://arxiv.org/abs/1511.06392">
+Neural Random-Access Machines
+</a><br/>
+Karol Kurach, Marcin Andrychowicz, Ilya Sutskever. 2016
+</li>
+
+<li><a href="https://www.nature.com/articles/nature20101">
+Hybrid computing using a neural network with dynamic external memory
+</a><br/>
+Alex Graves, Greg Wayne, Malcolm Reynolds, Tim Harley, Ivo Danihelka, Agnieszka Grabska-Barwińska, Sergio Gómez Colmenarejo, Edward Grefenstette, Tiago Ramalho, John Agapiou, Adrià Puigdomènech Badia, Karl Moritz Hermann, Yori Zwols, Georg Ostrovski, Adam Cain, Helen King, Christopher Summerfield, Phil Blunsom, Koray Kavukcuoglu, Demis Hassabis. Nature 2016
+</li>
+
+<li><a href="https://arxiv.org/abs/1703.07469">
+RobustFill: Neural Program Learning under Noisy I/O
+</a><br/>
+Jacob Devlin, Jonathan Uesato, Surya Bhupatiraju, Rishabh Singh, Abdel-rahman Mohamed, Pushmeet Kohli. 2017
+</li>
+
+<li><a href="https://openreview.net/pdf?id=ByldLrqlx">
+DeepCoder: Learning to Write Programs
+</a><br/>
+Metej Balog, Alexander L. Gaunt, Marc Brockschmidt, Sebastian Nowozin, Daniel Tarlow. ICLR 2017
+</li>
+
+<li><a href="https://www.microsoft.com/en-us/research/uploads/prod/2017/03/1608.04428.pdf">
+TerpreT : A Probabilistic Programming Language for Program Induction
+</a><br/>
+Alexander L. Gaunt, Marc Brockschmidt, Rishabh Singh, Nate Kushman, Pushmeet Kohli, Jonathan Taylor. 2016
+</li>
+
+<li><a href="https://arxiv.org/pdf/1611.01855.pdf">
+Neuro-Symbolic Program Synthesis
+</a><br/>
+Emilio Parisotto, Abdel-rahman Mohamed, Rishabh Singh, Lihong Li, Dengyong Zhou, Pushmeet Kohli. ICLR 2017
+</li>
+
+<li><a href="https://arxiv.org/abs/1606.04442">
+DeepMath - Deep Sequence Models for Premise Selection
+</a><br/>
+Alex A. Alemi, Francois Chollet, Niklas Een, Geoffrey Irving, Christian Szegedy, Josef Urban. 2017
+</li>
+-->
+
+<!-- <li><a href="http://homepages.inf.ed.ac.uk/wadler/papers/propositions-as-types/propositions-as-types.pdf">
+Propositions as Types
+</a><br/>
+Philip Wadler.
+Communications of the ACM, 2015
+</li>
+
+<li><a href="https://www.cs.rice.edu/~sc40/pubs/popl14-games.pdf">
+A constraint-based approach to solving games on infinite graphs
+</a><br/>
+Tewodros Beyene, Swarat Chaudhuri, Corneliu Popeea, and Andrey Rybalchenko.
+POPL, 2014
+</li>
+ -->
+
+
+
+
+
+                                </ul>
+                                </table>
+                            </section>
+
+                            <section id="resources" class="main">
+                                <header class="major special">
+                                    <h2>Resources</h2>
+                                </header>
+
+<h3>Reviews, Papers, and Talks</h3>
+<ul>
+    <li><a href="http://cs.au.dk/~danvy/communication.html">Communication in Computer Science</a><br/>
+    Olivier Danvy, class at Yale-NUS College Singapore
+</ul>
+
+<h3>Reading</h3>
+<ul>
+    <li><a href="http://blizzard.cs.uwaterloo.ca/keshav/home/Papers/data/07/paper-reading.pdf">
+    How to Read a Paper
+    </a><br/>
+    Srinivasan Keshav
+    </li>
+</ul>
+
+<h3>Presenting</h3>
+<ul>
+    <li><a href="https://www.inf.ethz.ch/personal/markusp/teaching/guides/guide-presentations-new.pdf">
+        How To Give Strong Technical Presentations
+    </a> (<a href="https://www.inf.ethz.ch/personal/markusp/teaching/guides/guide-presentations.pdf">older version with notes</a>)<br/>
+    Markus P&uuml;schel
+    </li>
+    <li><a href="https://www.microsoft.com/en-us/research/academic-program/give-great-research-talk/">
+    How to Give a Great Research Talk
+    </a><br/>
+    Simon Peyton Jones
+    </li>
+</ul>
+<h3>Writing</h3>
+<ul>
+    <li><a href="https://people.mpi-sws.org/~dreyer/talks/talk-plmw16.pdf">
+    How to Write Papers So People Can Read Them
+    </a><br/>
+    Derek Dreyer
+    </li>
+    <li><a href="https://www.microsoft.com/en-us/research/academic-program/write-great-research-paper/">
+    How to Write a Great Research Paper
+    </a> (<a href="https://www.youtube.com/watch?v=ZmFXMREURBI">video</a>)<br/>
+    Simon Peyton Jones
+    </li>
+</ul>
+<h3>Proposals</h3>
+<ul>
+    <li><a href="https://www.microsoft.com/en-us/research/academic-program/how-to-write-a-great-research-proposal/">
+    How to Write a Great Research Proposal
+    </a><br/>
+    Simon Peyton Jones and Alan Bundy
+    </li>
+
+    <li><a href="https://www.darpa.mil/work-with-us/heilmeier-catechism">
+    The Heilmeier Catechism
+    </a><br/>
+    George H. Heilmeier
+    </li>
+</ul>
+<h3>Experiments</h3>
+<ul>
+    <li><a href="http://www.sigplan.org/Resources/EmpiricalEvaluation/">
+    SIGPLAN empirical evaluation checklist
+    </a><br/>
+    Steve Blackburn, Matthias Hauswirth, Emery Berger, Michael Hicks
+    </li>
+</ul>
+
+<!--
+<h3>Deep Learning (General)</h3>
+<ul>
+    <li><a href="https://github.com/astorfi/Deep-Learning-World">
+    Deep Learning World
+    </a><br/>
+    Collected resources
+    </li>
+    <li><a href="https://www.quora.com/Where-should-I-start-learning-AI/answer/Parnian-Barekatin?share=edfa7c0d&srid=Yc3G">
+    Where should I start learning AI?
+    </a><br/>
+    Parnian-Barekatin, Quora answer
+    </li>
+    <li><a href="http://www.deeplearningbook.org">
+    Deep Learning
+    </a><br/>
+    Book by Ian Goodfellow, Yoshua Bengio, Aaron Courville
+    </li>
+    <li><a href="http://www.cs.cmu.edu/~rsalakhu/jsm2018.html">
+    The Deep Learning Revolution
+    </a><br/>
+    Christopher Manning, Russ Salakhutdinov
+    </li>
+    <li><a href="https://www.youtube.com/watch?v=9EN_HoEk3KY">
+    OpenAI Meta-Learning and Self-Play
+    </a><br/>
+    Ilya Sutskever
+    </li>
+    <li><a href="http://course.fast.ai">
+    Deep Learning for Coders
+    </a><br/>
+    Course at fast.ai
+    </li>
+    <li><a href="https://www.deeplearning.ai">
+    DeepLearning.ai
+    </a><br/>
+    Andrew Ng, specialization on Coursera
+    </li>
+    <li><a href="http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching.html">
+    Reinforcement learning
+    </a><br/>
+    David Silver, class at UCL
+    </li>
+
+
+</ul>
+<h3>ML &amp; Symbolic Reasoning</h3>
+<ul>
+    <li><a href="http://cl-informatik.uibk.ac.at/teaching/ss18/mltp/content.php">
+    Machine Learning for Theorem Proving
+    </a><br/>
+    Class at University of Innsbruck
+    </li>
+    <li><a href="https://uclmr.github.io/nampi/">
+    Neural Abstract Machines & Program Induction
+    </a>, (<a href="https://uclmr.github.io/nampi/2016/index.html">v1 2016</a>)<br/>
+    Workshop at ICML/NIPS
+    </li>
+
+    <li><a href="http://neural-symbolic.org">
+    Neural-Symbolic Learning and Reasoning
+    </a><br/>
+    Workshop series
+    </li>
+
+    <li><a href="https://alexpolozov.com/blog/program-synthesis-2018/">
+    Program Synthesis in 2017-18
+    </a><br/>
+    Alex Polozov
+    </li>
+</ul>
+
+-->
+                            </section>
+
+                        <!-- First Section -->
+                            <!-- <section id="first" class="main">
+                                <header class="major special">
+                                    <h2>Fineprint</h2>
+                                </header>
+                                <ul class="features">
+                                    <li>
+                                        <span class="icon major style1 fa-code"></span>
+                                        <h3>Ipsum consequat</h3>
+                                        <p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
+                                    </li>
+                                    <li>
+                                        <span class="icon major style3 fa-copy"></span>
+                                        <h3>Amed sed feugiat</h3>
+                                        <p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
+                                    </li>
+                                    <li>
+                                        <span class="icon major style5 fa-diamond"></span>
+                                        <h3>Dolor nullam</h3>
+                                        <p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
+                                    </li>
+                                </ul>
+                                <footer class="major">
+                                    <ul class="actions special">
+                                        <li><a href="generic.html" class="button">Learn More</a></li>
+                                    </ul>
+                                </footer>
+                            </section> -->
+
+                        <!-- Second Section -->
+                            <!-- <section id="second" class="main special">
+                                <header class="major">
+                                    <h2>Ipsum consequat</h2>
+                                    <p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
+                                    posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
+                                </header>
+                                <ul class="statistics">
+                                    <li class="style1">
+                                        <span class="icon fa-code-fork"></span>
+                                        <strong>5,120</strong> Etiam
+                                    </li>
+                                    <li class="style2">
+                                        <span class="icon fa-folder-open-o"></span>
+                                        <strong>8,192</strong> Magna
+                                    </li>
+                                    <li class="style3">
+                                        <span class="icon fa-signal"></span>
+                                        <strong>2,048</strong> Tempus
+                                    </li>
+                                    <li class="style4">
+                                        <span class="icon fa-laptop"></span>
+                                        <strong>4,096</strong> Aliquam
+                                    </li>
+                                    <li class="style5">
+                                        <span class="icon fa-diamond"></span>
+                                        <strong>1,024</strong> Nullam
+                                    </li>
+                                </ul>
+                                <p class="content">Nam elementum nisl et mi a commodo porttitor. Morbi sit amet nisl eu arcu faucibus hendrerit vel a risus. Nam a orci mi, elementum ac arcu sit amet, fermentum pellentesque et purus. Integer maximus varius lorem, sed convallis diam accumsan sed. Etiam porttitor placerat sapien, sed eleifend a enim pulvinar faucibus semper quis ut arcu. Ut non nisl a mollis est efficitur vestibulum. Integer eget purus nec nulla mattis et accumsan ut magna libero. Morbi auctor iaculis porttitor. Sed ut magna ac risus et hendrerit scelerisque. Praesent eleifend lacus in lectus aliquam porta. Cras eu ornare dui curabitur lacinia.</p>
+                                <footer class="major">
+                                    <ul class="actions special">
+                                        <li><a href="generic.html" class="button">Learn More</a></li>
+                                    </ul>
+                                </footer>
+                            </section>
+ -->
+                        <!-- Get Started -->
+<!--                             <section id="cta" class="main special">
+                                <header class="major">
+                                    <h2>Congue imperdiet</h2>
+                                    <p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
+                                    posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
+                                </header>
+                                <footer class="major">
+                                    <ul class="actions special">
+                                        <li><a href="generic.html" class="button primary">Get Started</a></li>
+                                        <li><a href="generic.html" class="button">Learn More</a></li>
+                                    </ul>
+                                </footer>
+                            </section>
+ -->
+                    </div>
+
+                <!-- Footer -->
+                    <footer id="footer">
+<!--                         <section>
+                            <h2>Aliquam sed mauris</h2>
+                            <p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat egestas velit, vitae tincidunt odio.</p>
+                            <ul class="actions">
+                                <li><a href="generic.html" class="button">Learn More</a></li>
+                            </ul>
+                        </section>
+                        <section>
+                            <h2>Etiam feugiat</h2>
+                            <dl class="alt">
+                                <dt>Address</dt>
+                                <dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
+                                <dt>Phone</dt>
+                                <dd>(000) 000-0000 x 0000</dd>
+                                <dt>Email</dt>
+                                <dd><a href="#">information@untitled.tld</a></dd>
+                            </dl>
+                            <ul class="icons">
+                                <li><a href="#" class="icon fa-twitter alt"><span class="label">Twitter</span></a></li>
+                                <li><a href="#" class="icon fa-facebook alt"><span class="label">Facebook</span></a></li>
+                                <li><a href="#" class="icon fa-instagram alt"><span class="label">Instagram</span></a></li>
+                                <li><a href="#" class="icon fa-github alt"><span class="label">GitHub</span></a></li>
+                                <li><a href="#" class="icon fa-dribbble alt"><span class="label">Dribbble</span></a></li>
+                            </ul>
+                        </section> -->
+                        <p class="copyright">&copy; Tiark Rompf, Purdue University. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+                    </footer>
+
+            </div>
+
+        <!-- Scripts -->
+            <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/js/jquery.scrollex.min.js"></script>
+            <script src="assets/js/jquery.scrolly.min.js"></script>
+            <script src="assets/js/browser.min.js"></script>
+            <script src="assets/js/breakpoints.min.js"></script>
+            <script src="assets/js/util.js"></script>
+            <script src="assets/js/main.js"></script>
+
+    </body>
+</html>
